@@ -1,3 +1,5 @@
+/* Adventure Game:Escape from School, by Balint,Said,Markus */
+
 :- dynamic at/2, i_am_at/1.
 
 /* Define the initial location */

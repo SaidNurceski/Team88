@@ -1,4 +1,5 @@
-/* <The name of this game>, by <your name goes here>. */
+
+/* The Adventure Game, by Balint,Said,Markus */
 
 :- dynamic i_am_at/1, at/2, holding/1.
 :- retractall(at(_, _)), retractall(i_am_at(_)), retractall(alive(_)).

@@ -99,3 +99,79 @@ kill :-
         write('You killed the ghost successfully :-)'), nl,
         write('Now, get out of the dust!'),
         nl, !.
+
+kill :-
+        location(ghost),
+        write('this has definitely no effects'), nl.
+
+kill :-
+        write('nothing to kill here'), nl.
+
+die :- !, finish.
+
+finish :-
+        nl, write('Please enter halt. command.'), nl, !.
+
+guide :-
+        nl,
+        write('COMMANDS'), nl,
+        write('guide.                   # print guide'), nl,
+        write('start.                   # start game'), nl,
+        write('n. e. s. w. u. d.        # go in direction north, east, south, west, up, down'), nl,
+        write('take(something).         # pick something up'), nl,
+        write('drop(something).         # drop something'), nl,
+        write('kill.                    # tries to attack'), nl,
+        write('look.                    # look around'), nl,
+        write('halt.                    # end game'), nl,
+        nl.
+
+start :-
+        guide,
+        look.
+
+description(courtyard) :-
+        at(coin, in_hand),
+        write('Congratulations, you have found the coin'), nl,
+        write('and won the game.'), nl,
+        finish, !.
+
+description(courtyard) :-
+        write('You are staying in a courtyard.  To the north is a tourture chamber'), nl,
+        write('to the south is a room.'), nl,
+        write('try to find the coin and bring it back to'), nl,
+        write('this courtyard.'), nl.
+
+description(building) :-
+        write('You are in a small room.  The exit is to the north.'), nl,
+        write('There is a creepy door to the west, but it seems to be'), nl,
+        write('unlocked.  There is a smaller door to the east.'), nl.
+
+description(dungeon) :-
+        write('You are in a dungeon full of fleas and they look very hungry'), nl,
+        write('I would go outside better'), nl.
+
+description(closet) :-
+        write('This is nothing but an old storage closet.'), nl.
+
+description(torture_chamber_entrance) :-
+        write('You are in the torture chamber.  The exit is to'), nl,
+        write('the south; there is a dark, large, round passageway to the east'), nl.
+
+description(torture_chamber) :-
+        lives(ghost),
+        at(coin, in_hand),
+        write('The ghost sees you with the coin and attacks!!!'), nl,
+        die.
+
+description(torture_chamber) :-
+        lives(ghost),
+        write('There is a giant ghost here! I''d leave better'), nl, !.
+description(torture_chamber) :-
+        write('There is a ghost twitching.'), nl.
+
+description(ghost) :-
+        lives(ghost),
+        write('You are on top of a giant ghost.'), nl.
+
+description(ghost) :-
+        write('Oh!  You''re on top of a giant dead ghost!'), nl.

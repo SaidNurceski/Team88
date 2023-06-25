@@ -1,6 +1,16 @@
-= Team88 - Saidi Yeti Nurtschezzki, Bertl-Balant Al Bolasch, MarkSuuSKeK Breini
+= Prolog: Castle Text Adventure Game
 
-* Prolog Team
-* Bösewicht Tommy
+`Breinesberger Markus, Nurceski Said, Balazs Balint`
 
-image::https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_200,w_200/v1403857429/vangpxbxsupwism3xkpb.jpg[]
+== Idea
+* In our text adventure game, you are in a castle and you need to find the coin and bring it back to the courtyard of the castle.
+* You will need to find objects to open doors and more. You have to kill something to find coin.
+
+== How to play
+* start SWI-Prolog using `swipl .\game.pl`
+* enter `start.` to start the game
+* if you need help, you can always type `guide.` for short instructions what you can do
+* you need to use `halt.` command to end game (for Windows/UNIX compability)
+
+== More
+* you can find the source on https://github.com/SaidNurceski/Team88[GitHub]
